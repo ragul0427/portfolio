@@ -9,7 +9,7 @@ function Education() {
       <div>
         <img
           src="https://o.remove.bg/downloads/05f5ba33-f680-4612-a1e4-8f25adb01eb8/online-education-concept_52683-8290-removebg-preview.png"
-          className="w-[80vw]"
+          className="w-[70vw] md:w-[40vw]"
         />
       </div>
       <div className="text-white text-[20px] pl-4">
