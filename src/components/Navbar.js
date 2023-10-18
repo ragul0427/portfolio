@@ -2,14 +2,36 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import MenuIcon from '@mui/icons-material/Menu';
 import { Drawer } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 function Navbar() {
   const [open,setOpen]=useState(false)
+  const [border,setBorder]=useState(false)
+
+  useEffect(()=>{
+    console.log(window.scrollY)
+    const handleScroll=()=>{
+      if(window.scrollY>0){
+        setBorder(false)
+      }else{
+        setBorder(true)
+      }
+    }
+
+    window.addEventListener('scroll',handleScroll)
+       
+
+        return()=>{
+            window.removeEventListener('scroll',handleScroll)
+      
+        }
+  },[border])
+  console.log(border,"wdnkw")
+
   return (
     <div className="w-screen">
       <motion.div
-        className="w-[100%] fixed h-[60px] flex py-2 border-b pb-2 border-blue-200 text-white items-center justify-between pl-5  md:!px-40"
+        className={`w-[100%] fixed h-[60px] flex py-2 ${border?"border-b":"border-none bg-blue-900"} pb-2 border-blue-200 text-white items-center justify-between pl-5  md:!px-40`}
         initial={{ opacity: 0, translateY: "-80px" }}
         animate={{ opacity: 1, translateY: "0px" }}
         transition={{ type: "spring", delay: 0.3, stiffness: "200" }}
