@@ -133,8 +133,8 @@ function Skills() {
 
   return (
     <div
-      name="skill"
-      className="bg-gradient-to-r border-t border-slate-400 pt-7 from-black/70 to-blue-900 md:h-screen !w-[100vw] flex flex-col md:flex-row justify-between md:px-20 items-center"
+      id="skill"
+      className=" border-t h-screen border-slate-400  md:h-screen !w-[100vw] flex flex-col md:flex-row justify-between md:px-20 items-center"
     >
       <motion.div
         className="w-[70%] md:w-[50%]"

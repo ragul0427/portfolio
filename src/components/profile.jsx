@@ -30,7 +30,7 @@ function Profiles() {
     <div>
       <div className="h-[calc(100vh-60px)] pt-7 md:pt-0 flex flex-col md:flex-row justify-around items-center">
         <motion.div
-          className="md:text-5xl flex flex-col gap-5 md:gap-10 pl-14 text-white w-[100%] md:w-[50%]"
+          className="text-2xl md:text-5xl flex flex-col gap-5 md:gap-10 pl-14 text-white w-[100%] md:w-[50%]"
           ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -65,7 +65,7 @@ function Profiles() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={imageAnimated}
-          className="pt-14 md:pt-0"
+          className="pt-4 md:pt-0"
         >
           <img
             src={Profile}
@@ -73,7 +73,6 @@ function Profiles() {
           />
         </motion.div>
       </div>
-      <Skills />
     </div>
   );
 }
