@@ -134,7 +134,7 @@ function Skills() {
   return (
     <div
       id="skill"
-      className=" border-t h-screen border-slate-400  md:h-screen !w-[100vw] flex flex-col md:flex-row justify-between md:px-20 items-center"
+      className=" border-t h-screen pt-7 border-slate-400 md:border-none  md:h-screen !w-[100vw] flex flex-col md:flex-row justify-between md:px-20 items-center"
     >
       <motion.div
         className="w-[70%] md:w-[50%]"
@@ -156,9 +156,10 @@ function Skills() {
           variants={zoomedInVariants}
           whileHover="zoomedIn" // Add zoom-in effect on hover
           transition={{ duration: 0.5 }}
+        className="text-lg"
         >
-          <h1 className="md:text-5xl text-white">Technical Skills</h1>
-          <ul className="md:pl-20">
+          <h1 className="md:text-6xl text-white">Technical Skills</h1>
+          <ul className="md:pl-8">
             {Skills.map((res, i) => {
               return (
                 <li key={i} className="list-disc text-white pt-5">
@@ -175,9 +176,10 @@ function Skills() {
           variants={zoomedInVariants2}
           whileHover="zoomedIn" // Add zoom-in effect on hover
           transition={{ duration: 1.5 }}
+          className="text-lg"
         >
-          <h1 className="md:text-5xl text-white">Key Skills</h1>
-          <ul className="md:pl-20">
+          <h1 className="md:text-6xl text-white">Key Skills</h1>
+          <ul className="md:pl-8">
             {KeySkills.map((res, i) => {
               return (
                 <li key={i} className="list-disc text-white pt-5">

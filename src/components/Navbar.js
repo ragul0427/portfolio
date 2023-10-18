@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <div className="w-screen">
       <motion.div
-        className="w-[100%] h-[60px] flex py-2 border-b pb-2 border-blue-200 text-white items-center justify-between pl-5  md:!px-40"
+        className="w-[100%] fixed h-[60px] flex py-2 border-b pb-2 border-blue-200 text-white items-center justify-between pl-5  md:!px-40"
         initial={{ opacity: 0, translateY: "-80px" }}
         animate={{ opacity: 1, translateY: "0px" }}
         transition={{ type: "spring", delay: 0.3, stiffness: "200" }}
@@ -17,11 +17,11 @@ function Navbar() {
         <div className="shadow-inner cursor-pointer shadow-white w-[30px] flex items-center justify-center rounded-full h-[30px] text-[14px]">
           R
         </div>
-        <div className="hidden md:flex gap-20">
+        <div className="hidden md:flex gap-20 text-lg">
           <p className="cursor-pointer">Profile</p>
           <Link to="skill" className="cursor-pointer">Skills</Link>
-          <p className="cursor-pointer">education</p>
-          <p className="cursor-pointer">contact</p>
+          <Link to="education" className="cursor-pointer">Education</Link>
+          <p className="cursor-pointer">Contact</p>
           <p className="cursor-pointer">About</p>
         </div>
         {/* <button className="shadow-inner text-sm shadow-white w-[80px] h-[30px] flex items-center justify-center">
@@ -32,12 +32,12 @@ function Navbar() {
         </div>
       </motion.div>
 
-       <Drawer open={open} width={200} closable={false} onClose={()=>{setOpen(!open)}} className="!h-[55vh] !bg-blue-900 text-white">
+       <Drawer open={open} width={280} closable={false} onClose={()=>{setOpen(!open)}} className="!h-[55vh] !bg-blue-900 text-white">
         <div className="float-right mt-[-10px]" onClick={()=>{setOpen(!open)}}><CloseIcon/></div>
        <div className="flex flex-col md:hidden gap-8 pt-5">
           <p className="cursor-pointer border-b pb-2">Profile</p>
           <Link to="skill" className="cursor-pointer border-b pb-2" onClick={()=>{setOpen(!open)}}>Skills</Link>
-          <p className="cursor-pointer border-b pb-2">education</p>
+          <Link to="education" className="cursor-pointer border-b pb-2" onClick={()=>{setOpen(!open)}}>education</Link>
           <p className="cursor-pointer border-b pb-2">contact</p>
           <p className="cursor-pointer border-b pb-2">About</p>
         </div>
