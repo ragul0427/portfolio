@@ -109,12 +109,12 @@ function Skills() {
     zoomedIn: {
       scale: 1.8, // Increase the scale to zoom in
       opacity: 0,
-      y: 200,
+      x: 200,
     },
     zoomedOut: {
       scale: 1, // Default scale to zoom out
       opacity: 1,
-      y: 0,
+      x: 0,
     },
   };
 
@@ -122,12 +122,12 @@ function Skills() {
     zoomedIn: {
       scale: 2, // Increase the scale to zoom in
       opacity: 0,
-      y: 200,
+      x: 200,
     },
     zoomedOut: {
       scale: 1, // Default scale to zoom out
       opacity: 1,
-      y: 0,
+      x: 0,
     },
   };
 

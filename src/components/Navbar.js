@@ -31,7 +31,7 @@ function Navbar() {
   return (
     <div className="w-screen">
       <motion.div
-        className={`w-[100%] fixed h-[60px] flex py-2 ${border?"border-b":"border-none bg-blue-900"} pb-2 border-blue-200 text-white items-center justify-between pl-5  md:!px-40`}
+        className={`w-[100vw] fixed h-[60px] flex py-2 ${border?"border-b":"border-none bg-blue-900"} pb-2 border-blue-200 text-white items-center justify-between pl-5  md:!px-40`}
         initial={{ opacity: 0, translateY: "-80px" }}
         animate={{ opacity: 1, translateY: "0px" }}
         transition={{ type: "spring", delay: 0.3, stiffness: "200" }}
@@ -40,11 +40,11 @@ function Navbar() {
           R
         </div>
         <div className="hidden md:flex gap-20 text-lg">
-          <p className="cursor-pointer">Profile</p>
+          <Link to="profile" className="cursor-pointer">Profile</Link>
           <Link to="skill" className="cursor-pointer">Skills</Link>
           <Link to="education" className="cursor-pointer">Education</Link>
+          <Link to="project" className="cursor-pointer ">Projects</Link>
           <p className="cursor-pointer">Contact</p>
-          <p className="cursor-pointer">About</p>
         </div>
         {/* <button className="shadow-inner text-sm shadow-white w-[80px] h-[30px] flex items-center justify-center">
           Login
@@ -60,8 +60,8 @@ function Navbar() {
           <p className="cursor-pointer border-b pb-2">Profile</p>
           <Link to="skill" className="cursor-pointer border-b pb-2" onClick={()=>{setOpen(!open)}}>Skills</Link>
           <Link to="education" className="cursor-pointer border-b pb-2" onClick={()=>{setOpen(!open)}}>education</Link>
-          <p className="cursor-pointer border-b pb-2">contact</p>
-          <p className="cursor-pointer border-b pb-2">About</p>
+          <Link to="project" className="cursor-pointer border-b pb-2" onClick={()=>{setOpen(!open)}}>Projects</Link>
+          <p className="cursor-pointer border-b pb-2">Contact</p>
         </div>
        </Drawer>
     </div>

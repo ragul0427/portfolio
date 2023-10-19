@@ -1,18 +1,50 @@
 import React from "react";
-
+import Edu from "../assets/edu.png"
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 function Education() {
+  const [ref, inView] = useInView();
+  const animationVariants = {
+    visible: { opacity: 1, x: 0, rotateX: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, x: -200, rotateX: 120 },
+  };
+  const zoomedInVariants = {
+    zoomedIn: {
+      scale: 1.8, // Increase the scale to zoom in
+      opacity: 0,
+      y: 200,
+    },
+    zoomedOut: {
+      scale: 1, // Default scale to zoom out
+      opacity: 1,
+      y: 0,
+    },
+  };
   return (
     <div
-      className="md:h-screen border-t border-slate-400 md:border-none flex flex-col md:flex-row justify-around items-center"
+      className="md:h-screen border-t border-slate-400 md:border-none flex flex-col md:flex-row-reverse justify-around items-center"
       id="education"
     >
-      <div>
+      <motion.div 
+       ref={ref}
+       initial="hidden"
+       //   this animate all time scroll
+       animate={inView ? "visible" : "hidden"}
+       //   *******************************
+       //   transition={{duration:1}}
+       variants={animationVariants}
+      >
         <img
-          src="https://o.remove.bg/downloads/05f5ba33-f680-4612-a1e4-8f25adb01eb8/online-education-concept_52683-8290-removebg-preview.png"
+          src={Edu}
           className="w-[70vw] md:w-[40vw]"
         />
-      </div>
-      <div className="text-white text-[20px] pl-4">
+      </motion.div>
+      <motion.div className="text-white text-[20px] pl-4"  initial="zoomedOut"
+          animate={inView ? "zoomedOut" : "zoomedIn"}
+          exit="zoomedOut"
+          variants={zoomedInVariants}
+          whileHover="zoomedIn" // Add zoom-in effect on hover
+          transition={{ duration: 0.5 }}>
         <h1 className="text-2xl md:text-5xl"> Education</h1>
         <p className="flex flex-col pt-4">
           <span className="bg-gradient-to-r from-black/90 to-blue-900 rounded-md px-2 py-1 md:text-[22px]">
@@ -51,7 +83,7 @@ function Education() {
           </span>
           <span className="tracking-wider">88%</span>
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 }

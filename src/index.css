@@ -5,6 +5,7 @@
 
 body {
     font-family: "Rancho", sans-serif !important;
+    overflow-x: hidden !important;
   }
 
 ::-webkit-scrollbar{

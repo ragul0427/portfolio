@@ -27,7 +27,7 @@ function Profiles() {
     hidden: { translateX: 250, rotate: -120 },
   };
   return (
-    <div>
+    <div id="profile">
       <div className="h-screen pt-7 md:pt-0 flex flex-col md:flex-row justify-around items-center">
         <motion.div
           className="text-3xl md:text-5xl flex flex-col gap-5 md:gap-10 pl-14 text-white w-[100%] md:w-[50%]"
