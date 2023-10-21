@@ -4,9 +4,8 @@ import { useInView } from "react-intersection-observer";
 
 function Skills() {
   const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Set triggerOnce to true if you want the animation to occur only once
-  });
+  const [ref, inView] = useInView();
+
   const Skills = [
     {
       id: 1,
@@ -141,8 +140,9 @@ function Skills() {
         className="w-[70%] md:w-[50%]"
         ref={ref}
         initial="hidden"
+        animate={controls}
         //   this animate all time scroll
-        animate={inView ? "visible" : "hidden"}
+        // animate={inView ? "visible" : "hidden"}
         //   *******************************
         //   transition={{duration:1}}
         variants={animationVariants}
@@ -172,7 +172,8 @@ function Skills() {
         </motion.div>
         <motion.div
           initial="zoomedOut"
-          animate={inView ? "zoomedOut" : "zoomedIn"}
+          animate={controls}
+          // animate={inView ? "zoomedOut" : "zoomedIn"}
           exit="zoomedOut"
           variants={zoomedInVariants2}
           whileHover="zoomedIn" // Add zoom-in effect on hover

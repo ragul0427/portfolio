@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Edu from "../assets/edu.png"
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 function Education() {
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Set triggerOnce to true if you want the animation to occur only once
-  });
+  const [ref, inView] = useInView();
+  const controls=useAnimation()
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
   const animationVariants = {
     visible: { opacity: 1, x: 0, rotateX: 0, transition: { duration: 1 } },
     hidden: { opacity: 0, x: -200, rotateX: 120 },
@@ -26,12 +31,14 @@ function Education() {
     <div
       className="md:h-screen !w-[100vw] !overflow-x-hidden border-t pt-2 border-slate-400 md:border-none flex flex-col md:flex-row-reverse justify-around items-center"
       id="education"
+      
     >
       <motion.div 
        ref={ref}
        initial="hidden"
        //   this animate all time scroll
-       animate={inView ? "visible" : "hidden"}
+      //  animate={inView ? "visible" : "hidden"}
+       animate={controls}
        //   *******************************
        //   transition={{duration:1}}
        variants={animationVariants}
@@ -42,7 +49,8 @@ function Education() {
         />
       </motion.div>
       <motion.div className="text-white text-[20px] pl-4"  initial="zoomedOut"
-          animate={inView ? "zoomedOut" : "zoomedIn"}
+          // animate={inView ? "zoomedOut" : "zoomedIn"}
+          animate={controls}
           exit="zoomedOut"
           variants={zoomedInVariants}
           whileHover="zoomedIn" // Add zoom-in effect on hover

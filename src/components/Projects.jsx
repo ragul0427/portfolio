@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 function Projects() {
   const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Set triggerOnce to true if you want the animation to occur only once
-  });
+  const [ref, inView] = useInView();
 
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
  
   return (
-    <div
+    <motion.div
       className="md:h-screen border-t border-slate-400 md:border-none pt-20"
       id="project"
-      
+      animate={controls}
     >
       <h1 className="text-center text-6xl text-white">Projects</h1>
       <div className="flex flex-col pl-5 text-[12px]  md:text-xl md:grid md:grid-cols-2 gap-4 md:gap-40 md:pl-28 pt-3 md:pt-20">
@@ -69,7 +72,7 @@ function Projects() {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

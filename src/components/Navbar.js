@@ -28,6 +28,9 @@ function Navbar() {
   },[border])
   console.log(border,"wdnkw")
 
+
+  
+
   return (
     <div className="w-screen">
       <motion.div

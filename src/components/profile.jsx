@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Profile from "../assets/profile.png";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import Skills from "./skills";
 import { useInView } from "react-intersection-observer";
 
 function Profiles() {
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Set triggerOnce to true if you want the animation to occur only once
-  });
+  const [ref, inView] = useInView();
+  const controls = useAnimation();
+  
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
 
   const animatedVariants = {
     visible: { translateY: 0, transition: { type: "spring",duration:1,delay:0.2 } },
@@ -35,7 +40,8 @@ function Profiles() {
           className="text-3xl md:text-5xl flex flex-col gap-5 md:gap-10 pl-14 text-white w-[100%] md:w-[50%]"
           ref={ref}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          // animate={inView ? "visible" : "hidden"}
+          animate={controls}
           variants={animatedVariants}
         >
           <p>
@@ -65,7 +71,8 @@ function Profiles() {
         <motion.div
           ref={ref}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={controls}
+          // animate={inView ? "visible" : "hidden"}
           variants={imageAnimated}
           className="pt-4 md:pt-0"
         >
