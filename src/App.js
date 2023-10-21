@@ -3,12 +3,12 @@ import {Navbar,Profile,Skills,Education,Projects} from "./components"
 
 function App() {
   return (
-    <div className='bg-gradient-to-r from-black/70 to-blue-900'>
+    <div className='bg-gradient-to-r from-black/90 to-black'>
       <Navbar/>
       <Profile/>
       <Skills/>
       <Education/>
-      <Projects/>
+      {/* <Projects/> */}
     </div>
   )
 }

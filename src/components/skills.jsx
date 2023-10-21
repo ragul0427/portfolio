@@ -134,7 +134,7 @@ function Skills() {
   return (
     <div
       id="skill"
-      className=" border-t h-screen pt-7 border-slate-400 md:border-none  md:h-screen !w-[100vw] flex flex-col md:flex-row justify-between md:px-20 items-center"
+      className=" border-t  pt-7 border-slate-400 md:border-none  md:h-screen !w-[100vw] flex flex-col md:flex-row justify-between md:px-20 items-center"
     >
       <motion.div
         className="w-[70%] md:w-[50%]"
@@ -148,7 +148,7 @@ function Skills() {
       >
         <img src="https://neetable.com/img/hire-pages/mern-stack-developer/hire-mern-stack-developer-banner.png" />
       </motion.div>
-      <div className="flex flex-row gap-10 md:gap-20 pt-7 md:pt-0 pl-7 md:pl-0">
+      {/* <div className="flex flex-row gap-10 md:gap-20 pt-7 md:pt-0 pl-7 md:pl-0">
         <motion.div
           initial="zoomedOut"
           animate={inView ? "zoomedOut" : "zoomedIn"}
@@ -189,7 +189,7 @@ function Skills() {
             })}
           </ul>
         </motion.div>
-      </div>
+      </div> */}
     </div>
   );
 }

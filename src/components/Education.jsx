@@ -22,7 +22,7 @@ function Education() {
   };
   return (
     <div
-      className="md:h-screen border-t border-slate-400 md:border-none flex flex-col md:flex-row-reverse justify-around items-center"
+      className="md:h-screen !overflow-x-hidden border-t pt-2 border-slate-400 md:border-none flex flex-col md:flex-row-reverse justify-around items-center"
       id="education"
     >
       <motion.div 

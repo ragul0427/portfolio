@@ -9,7 +9,7 @@ function Projects() {
  
   return (
     <div
-      className="md:h-screen pt-20"
+      className="md:h-screen border-t border-slate-400 md:border-none pt-20"
       id="project"
       
     >

@@ -46,15 +46,9 @@ function Navbar() {
           <Link to="project" className="cursor-pointer ">Projects</Link>
           <p className="cursor-pointer">Contact</p>
         </div>
-        {/* <button className="shadow-inner text-sm shadow-white w-[80px] h-[30px] flex items-center justify-center">
-          Login
-        </button> */}
-        <div className="md:hidden pr-6" onClick={()=>{setOpen(!open)}}>
-          <MenuIcon/>
-        </div>
-      </motion.div>
 
-       <Drawer open={open} width={280} closable={false} onClose={()=>{setOpen(!open)}} className="!h-[55vh] !bg-blue-900 text-white">
+
+        <Drawer open={open} width={280} closable={false} onClose={()=>{setOpen(!open)}} className="!h-[55vh] !bg-blue-900 text-white">
         <div className="float-right mt-[-10px]" onClick={()=>{setOpen(!open)}}><CloseIcon/></div>
        <div className="flex flex-col md:hidden gap-8 pt-5">
           <p className="cursor-pointer border-b pb-2">Profile</p>
@@ -64,6 +58,15 @@ function Navbar() {
           <p className="cursor-pointer border-b pb-2">Contact</p>
         </div>
        </Drawer>
+        {/* <button className="shadow-inner text-sm shadow-white w-[80px] h-[30px] flex items-center justify-center">
+          Login
+        </button> */}
+        <div className="md:hidden pr-6" onClick={()=>{setOpen(!open)}}>
+          <MenuIcon/>
+        </div>
+      </motion.div>
+
+       
     </div>
   );
 }
