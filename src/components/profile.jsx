@@ -6,7 +6,9 @@ import Skills from "./skills";
 import { useInView } from "react-intersection-observer";
 
 function Profiles() {
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Set triggerOnce to true if you want the animation to occur only once
+  });
 
   const animatedVariants = {
     visible: { translateY: 0, transition: { type: "spring",duration:1,delay:0.2 } },
